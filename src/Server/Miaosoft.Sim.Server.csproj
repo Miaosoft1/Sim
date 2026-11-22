@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Hosting\**\*.cs" />
+    <ProjectReference Include="..\Runtime\Abstractions\Miaosoft.Sim.Runtime.Abstractions.csproj" />
+    <ProjectReference Include="..\Control\Miaosoft.Sim.Control.csproj" />
+    <ProjectReference Include="..\Combat\Skill\Miaosoft.Sim.Combat.Skill.csproj" />
+  </ItemGroup>
+</Project>

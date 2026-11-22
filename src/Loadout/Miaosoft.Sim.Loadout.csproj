@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Protocol\**\*.cs;Server\**\*.cs;Client\**\*.cs" />
+    <ProjectReference Include="..\Combat\Skill\Miaosoft.Sim.Combat.Skill.csproj" />
+  </ItemGroup>
+</Project>

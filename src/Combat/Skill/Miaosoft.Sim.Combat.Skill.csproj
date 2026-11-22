@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Miaosoft.Sim.Combat.Skill.Tests" />
+    <ProjectReference Include="..\Map\Miaosoft.Sim.Combat.Map.csproj" />
+    <ProjectReference Include="..\..\Core\Miaosoft.Sim.Core.csproj" />
+  </ItemGroup>
+</Project>

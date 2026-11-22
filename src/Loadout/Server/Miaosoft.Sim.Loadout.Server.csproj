@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miaosoft.Sim.Loadout.csproj" />
+    <ProjectReference Include="..\Protocol\Miaosoft.Sim.Loadout.Protocol.csproj" />
+    <ProjectReference Include="..\..\Runtime\Abstractions\Miaosoft.Sim.Runtime.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

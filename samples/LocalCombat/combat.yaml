@@ -1,0 +1,72 @@
+schemaVersion: 1
+damageType:
+  - id: impact
+ability:
+  - id: bolt
+    type: Projectile
+    allowMultiple: false
+    trigger: { type: Command }
+    data:
+      speed: 0
+      gate:
+        resourceCost: 5
+        charges: { maximum: 2, initial: 2 }
+  - id: bolt-damage
+    type: Damage
+    allowMultiple: false
+    trigger:
+      type: ProjectileHit
+      sourceAbilityIds: [bolt, moving-bolt]
+      conditions:
+        - { type: Expression, expression: "event.source == holder && target.life > 0" }
+        - { type: Distance, anchor: HitPoint, maximum: 10 }
+    data:
+      damage:
+        - type: impact
+          formula: "ability.level * 10 + source.level"
+  - id: heal-delivery
+    type: Projectile
+    allowMultiple: false
+    trigger: { type: TargetLifeReduce, sourceAbilityIds: [bolt-damage] }
+    data:
+      speed: 0
+      selector: { type: tracking, origin: source }
+  - id: heal-payload
+    type: Heal
+    allowMultiple: false
+    trigger: { type: ProjectileHit, sourceAbilityIds: [heal-delivery] }
+    data: { amount: 7 }
+  - id: fortify
+    type: Status
+    allowMultiple: false
+    trigger: { type: ProjectileHit, sourceAbilityIds: [bolt] }
+    data:
+      durationSeconds: 5
+      stackPolicy: StackOnly
+      stackLimit: 2
+      modifiers:
+        - { target: lifePointMax, formula: "ability.level * 10 + target.level" }
+  - id: endurance
+    type: BaseProperty
+    allowMultiple: false
+    trigger: { type: None }
+    data:
+      modifiers:
+        - { target: lifePointMax, formula: "ability.level * 5" }
+  - id: receiver
+    type: BeingDamage
+    allowMultiple: false
+    trigger: { type: None }
+    data: {}
+  - id: mortality
+    type: Death
+    allowMultiple: false
+    trigger: { type: None }
+    data: {}
+  - id: moving-bolt
+    type: Projectile
+    allowMultiple: false
+    trigger: { type: Command }
+    data:
+      speed: 2
+      gate: { windupSeconds: 1, resourceCost: 5 }

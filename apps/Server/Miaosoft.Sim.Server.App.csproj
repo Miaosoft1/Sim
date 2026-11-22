@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Server\Miaosoft.Sim.Server.csproj" />
+    <ProjectReference Include="..\..\src\Server\Hosting\Miaosoft.Sim.Server.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\Combat\Skill.Content\Miaosoft.Sim.Combat.Skill.Content.csproj" />
+    <ProjectReference Include="..\..\src\Content\Loading\Miaosoft.Sim.Content.Loading.csproj" />
+    <None Include="..\..\samples\LocalCombat\combat.yaml" Link="combat.yaml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

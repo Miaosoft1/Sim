@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="MSTest.TestAdapter" Version="4.0.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.Telemetry" Version="2.0.1" ExcludeAssets="build;buildTransitive" />
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <ProjectReference Include="..\..\src\Protocol\Miaosoft.Sim.Protocol.csproj" />
+    <ProjectReference Include="..\..\src\Control\Miaosoft.Sim.Control.csproj" />
+    <ProjectReference Include="..\..\src\Runtime\Miaosoft.Sim.Runtime.csproj" />
+    <ProjectReference Include="..\..\src\Server\Miaosoft.Sim.Server.csproj" />
+    <ProjectReference Include="..\..\src\Server\Hosting\Miaosoft.Sim.Server.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\Client\Miaosoft.Sim.Client.csproj" />
+    <ProjectReference Include="..\..\src\Loadout\Server\Miaosoft.Sim.Loadout.Server.csproj" />
+    <ProjectReference Include="..\..\src\Loadout\Client\Miaosoft.Sim.Loadout.Client.csproj" />
+    <ProjectReference Include="..\..\src\Combat\Skill.Content\Miaosoft.Sim.Combat.Skill.Content.csproj" />
+    <ProjectReference Include="..\..\src\Content\Loading\Miaosoft.Sim.Content.Loading.csproj" />
+    <Compile Include="..\..\apps\Server\Demo\NeutralArena.cs" Link="Arena\NeutralArena.cs" />
+    <None Include="..\LocalCombat\combat.yaml" Link="combat.yaml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
