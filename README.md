@@ -75,6 +75,24 @@ In the Alpha console try `cast bolt Beta`, then `status`, `disconnect` and
 See [network contracts and current
 limits](docs/en/networking.md); queue acceptance is not execution success.
 
+## JavaScript client
+
+A shared browser-and-Node ES-module SDK is available at
+[clients/javascript](clients/javascript). It implements the isolated session
+protocol prototype, including demo admission/rejoin, YAML event envelopes,
+snapshot updates, queue receipts and retry preservation. The SDK has no server
+implementation dependency and no Node-only runtime API. Node.js is used only for
+installing packages and running its optional Vitest suite:
+
+```powershell
+cd .\clients\javascript
+npm install
+npm test
+```
+
+This is not a graphical client and does not enable private Loadout or private
+authentication behavior.
+
 LocalCombat commands set `AbilityInstanceId` to the selected runtime instance.
 With multiple installed command abilities of the same definition, omitting it
 fails with `AmbiguousAbility`; an unknown, foreign, wrong-definition or

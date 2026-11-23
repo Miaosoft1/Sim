@@ -18,3 +18,4 @@ coverage/
 *.nupkg
 packages/
 .DS_Store
+node_modules/

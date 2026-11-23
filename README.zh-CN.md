@@ -65,6 +65,22 @@ Alpha 控制台可输入 `cast bolt Beta`，再使用 `status`、`disconnect`、
 详见[网络契约及当前限制](docs/zh-CN/networking.md)；
 入队确认不等于执行成功。
 
+## JavaScript 客户端
+
+浏览器与 Node.js 共用的 ES module SDK 位于
+[clients/javascript](clients/javascript)。它实现隔离会话协议原型：
+演示入场／重连、YAML 事件信封、快照更新、队列收据及原始重试保留。
+SDK 本身没有服务端实现依赖，也不使用 Node-only 运行时 API。
+Node.js 只用于安装依赖和运行可选的 Vitest 测试：
+
+```powershell
+cd .\clients\javascript
+npm install
+npm test
+```
+
+它不是图形客户端，也没有启用私人 Loadout 或私人认证行为。
+
 LocalCombat 命令用 `AbilityInstanceId` 选择实际运行实例。同定义存在多份已安装
 命令能力时，缺少选择返回 `AmbiguousAbility`；未知、其他持有者、定义不匹配或
 未授权实例返回 `AbilityNotAvailable`。选中的实例充能耗尽时不会回退到另一份。
