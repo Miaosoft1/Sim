@@ -1,0 +1,22 @@
+{
+  "name": "@miaosoft/sim-client",
+  "version": "0.1.0",
+  "description": "Browser-and-Node-compatible JavaScript client for the Miaosoft.Sim session protocol.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./core": "./src/index.js",
+    "./signalr": "./src/signalr-transport.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^9.0.6",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
