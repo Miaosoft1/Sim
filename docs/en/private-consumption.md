@@ -30,13 +30,13 @@ For a private project located at `apps/Console/Console.csproj`, the core SDK
 reference is:
 
 ```xml
-<ProjectReference Include="..\..\..\Miaosoft.Sim\src\Client\Miaosoft.Sim.Client.csproj" />
+<ProjectReference Include="..\..\..\Miaosoft.Sim\clients\csharp\Miaosoft.Sim.Client.csproj" />
 ```
 
 If that application selects Loadout, also reference the optional client:
 
 ```xml
-<ProjectReference Include="..\..\..\Miaosoft.Sim\src\Loadout\Client\Miaosoft.Sim.Loadout.Client.csproj" />
+<ProjectReference Include="..\Miaocrosoft.Script\src\BattleGame\Client\Loadout\Miaosoft.Sim.Loadout.Client.csproj" />
 ```
 
 A private gameplay project at `src/Game/Modes/Example/Example.csproj`

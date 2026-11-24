@@ -24,7 +24,7 @@ Samples / application composition
     |-- optional Loadout.Content -> Loadout -> Combat.Skill
     |-- Server.Hosting -> Runtime -> Protocol -> Core / Serialization.Yaml
     |-- Server -> Runtime.Abstractions / Combat.Skill
-    `-- Console -> Client -> Control -> Protocol
+    `-- Console -> clients/csharp -> Control -> Protocol
 ```
 
 - **Core:** simulation-time queue, event receivers, cancellation and atomic changes.

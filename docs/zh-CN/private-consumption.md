@@ -25,13 +25,13 @@ repos/
 对于位于 `apps/Console/Console.csproj` 的私人项目，基础 SDK 引用为：
 
 ```xml
-<ProjectReference Include="..\..\..\Miaosoft.Sim\src\Client\Miaosoft.Sim.Client.csproj" />
+<ProjectReference Include="..\..\..\Miaosoft.Sim\clients\csharp\Miaosoft.Sim.Client.csproj" />
 ```
 
 如果该应用选择 Loadout，再显式引用可选客户端：
 
 ```xml
-<ProjectReference Include="..\..\..\Miaosoft.Sim\src\Loadout\Client\Miaosoft.Sim.Loadout.Client.csproj" />
+<ProjectReference Include="..\Miaocrosoft.Script\src\BattleGame\Client\Loadout\Miaosoft.Sim.Loadout.Client.csproj" />
 ```
 
 位于 `src/Game/Modes/Example/Example.csproj` 的私人玩法项目可引用 Combat：

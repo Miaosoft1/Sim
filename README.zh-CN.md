@@ -20,7 +20,7 @@
     |-- 可选 Loadout.Content -> Loadout -> Combat.Skill
     |-- Server.Hosting -> Runtime -> Protocol -> Core / Serialization.Yaml
     |-- Server -> Runtime.Abstractions / Combat.Skill
-    `-- Console -> Client -> Control -> Protocol
+    `-- Console -> clients/csharp -> Control -> Protocol
 ```
 
 - **Core**：模拟时间队列、事件接收器、取消和原子变更。

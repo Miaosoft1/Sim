@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="11.0.0" />
+    <ProjectReference Include="..\..\src\Protocol\Miaosoft.Sim.Protocol.csproj" />
+    <ProjectReference Include="..\..\src\Control\Miaosoft.Sim.Control.csproj" />
+  </ItemGroup>
+</Project>

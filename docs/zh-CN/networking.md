@@ -78,11 +78,13 @@ SDK 保留未解决操作的原内容及原操作号；传输失败后不静默�
 
 ## 可选 Loadout 适配
 
-`Miaosoft.Sim.Loadout.Protocol`、`.Server`、`.Client` 单独选择，基础 Combat Server、
-Client 和 Console 不引用它们。两端使用 `EventCodec.CreateBuilder().AddLoadout()`；
+中性的 `Miaosoft.Sim.Loadout.Protocol` 和 `.Server` 可单独选择，私人
+`Miaosoft.Sim.Loadout.Client` 观察适配器也可单独选择。基础 Combat Server、
+Client 和 Console 不引用私人 Loadout 内容。两端使用 `EventCodec.CreateBuilder().AddLoadout()`；
 以真实单位功能及可信交换／死亡目录组合 `LoadoutSessionSimulation`，
 将其 `Observation` 注册到宿主。适配器依赖 `Runtime.Abstractions`，不依赖执行循环实现
-或具体战斗宿主。SDK 选择 `LoadoutClientModule` 协商第一版 `loadout` 观察模块。
+或具体战斗宿主。私人 SDK 选择 `LoadoutClientModule` 协商第一版 `loadout` 观察模块，
+且只依赖公开 Client 与 Protocol 项目。
 
 成员会变化时，传入 `Func<LoadoutSessionFeatures>`，而不是固定集合。
 玩法在启动阶段或已有串行事件链内发布新的、绑定 Context 的成员快照；

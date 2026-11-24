@@ -109,14 +109,16 @@ inputs and real-time lease cleanup. It does not resume the old combat queue.
 
 ## Optional Loadout adapter
 
-`Miaosoft.Sim.Loadout.Protocol`, `.Server` and `.Client` are separately selected.
-The base Combat Server, Client and Console do not reference them. Register
+`Miaosoft.Sim.Loadout.Protocol` and `.Server` are publicly neutral optional modules.
+The private `Miaosoft.Sim.Loadout.Client` observation adapter is separately selected.
+The base Combat Server, Client and Console do not reference private Loadout content. Register
 `EventCodec.CreateBuilder().AddLoadout()` at both endpoints. Wrap the simulation
 in `LoadoutSessionSimulation`, supplying the actual unit features and
 trusted exchange/death directories; register its `Observation` with the owner.
 The adapter depends on `Runtime.Abstractions`, not the execution-loop assembly
 or a concrete battle host. Select `LoadoutClientModule` in the SDK to negotiate
-the version-one `loadout` observation.
+the version-one `loadout` observation. The private adapter depends only on the public
+client and protocol projects.
 
 For changing membership, supply `Func<LoadoutSessionFeatures>` instead of fixed
 collections. The mode publishes a new, Context-bound membership snapshot during
